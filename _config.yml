@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------
 
 # Site
-title: NexT
+title: myblog
 subtitle:
 description: 记录生活
 author: 刘子聪
@@ -150,9 +150,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 
 
 # ---------------------------------------------------------------
