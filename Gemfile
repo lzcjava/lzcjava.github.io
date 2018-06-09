@@ -1,9 +1,14 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source 'http://rubygems.org'
+source "https://rubygems.org"
 
-group :development do
-  gem 'rake', '~> 10.4.2'
-  gem 'sass', '~> 3.4.10'
-  gem 'jekyll', '~> 2.5.3'
-end
+gem "autoprefixer-rails"
+gem "html-proofer"
+gem "image_optim"
+gem "jekyll"
+gem "jekyll-assets"
+gem "jekyll-paginate"
+gem "jekyll-sitemap"
+gem "jemoji"
+gem "mini_magick"
+gem "sass"
+gem "sprockets"
+gem "uglifier"
