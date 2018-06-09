@@ -25,7 +25,7 @@ web容器:tomcat<br>
 
 配置pom.xml文件,加入依赖包
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
@@ -203,20 +203,14 @@ __说明:它是springmvc框架的主配置文件,文件名可以修改__
 ## 编写控制器(处理器)cotroller
 __说明: 相当于struts2中的action__
 
-```
+```java
 package cn.itheima.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-/** 
- * @ClassName: HelloController 
- * @Description: hello控制器
- * @author 传智 小杨老师  
- * @date 2018-5-31 下午3:58:51 
- *  
- */
+
 @Controller
 public class HelloController {
 	
