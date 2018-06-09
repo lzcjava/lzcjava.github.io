@@ -98,3 +98,5 @@ gems:
   - jekyll-assets
   - jekyll_pages_api
   - jekyll-react
+
+theme: jekyll-theme-minimal
