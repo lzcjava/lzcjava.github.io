@@ -9,7 +9,7 @@ subtitle:
 description: 记录学习
 author: 刘子聪
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: en
+language: zh-Hans
 date_format: '%Y-%m-%d'
 
 # URL
@@ -232,7 +232,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-avatar: http://img3.imgtn.bdimg.com/it/u=1701598098,2034079448&fm=214&gp=0.jpg
+avatar: http://wx2.sinaimg.cn/mw690/71081ab7gy1fs5b8c0thmj2046046mxg.jpg
 
 
 # Table Of Contents in the Sidebar
