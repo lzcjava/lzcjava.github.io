@@ -1,8 +1,9 @@
-# A sample Gemfile
-source "https://rubygems.org"
-gemspec
+# If you have OpenSSL installed, we recommend updating
+# the following line to use "https"
+source 'http://rubygems.org'
 
-gem 'jekyll'
-gem 'jekyll-paginate'
-gem 'kramdown'
-gem 'pygments.rb'
+group :development do
+  gem 'rake', '~> 10.4.2'
+  gem 'sass', '~> 3.4.10'
+  gem 'jekyll', '~> 2.5.3'
+end
