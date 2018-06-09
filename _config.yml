@@ -1,3 +1,12 @@
-name: Linear
-description: Linear template for Jekyll
-paginate: 10
+# Setup
+name:         Project or Site name (Architect Theme)
+tagline:      A responsive theme for your project on GitHub Pages
+baseurl:      ""
+locale:       "en"
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
