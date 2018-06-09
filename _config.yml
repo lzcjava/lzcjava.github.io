@@ -1,15 +1,15 @@
-﻿# ---------------------------------------------------------------
+# ---------------------------------------------------------------
 # Jekyll & Global Configuration
 ## Docs: https://jekyllrb.com/docs/configuration/
 # ---------------------------------------------------------------
 
 # Site
-title: liuzicong
+title: NexT
 subtitle:
-description: 记录学习
-author: 刘子聪
+description:
+author: John Doe
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: zh-Hans
+language: en
 date_format: '%Y-%m-%d'
 
 # URL
@@ -232,7 +232,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-avatar: http://wx2.sinaimg.cn/mw690/71081ab7gy1fs5b8c0thmj2046046mxg.jpg
+#avatar:
 
 
 # Table Of Contents in the Sidebar
