@@ -6,7 +6,7 @@ date: 2018-06-11 16:43:11
 
 ## 整合思路
 
-### 项目分成
+### 项目分层
 
 1. 表现层:spring(controller)
 2. 业务层:service
@@ -37,12 +37,12 @@ mybatis-spring整合包<br>
 log4j日志包<br>
 jstl标签库<br>
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cn.itheima</groupId>
+	<groupId>cn</groupId>
 	<artifactId>ssm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
@@ -237,7 +237,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         http://www.springframework.org/schema/context/spring-context-4.0.xsd">
         
         <!-- 配置扫描controller -->
-        <context:component-scan base-package="cn.itheima.ssm.controller"/>
+        <context:component-scan base-package="cn.ssm.controller"/>
         
         <!-- 注解驱动方式配置处理器映射器和处理器适配器 -->
         <mvc:annotation-driven/>
@@ -316,7 +316,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			1.如果有多个包，在同一个父包下，配置父包即可
 			2.如果不在同一个父包，以半角逗号进行分割：","
 		 -->
-		 <property name="basePackage" value="cn.itheima.ssm.mapper"/>
+		 <property name="basePackage" value="cn.ssm.mapper"/>
 	</bean>
 	
 </beans>
@@ -344,7 +344,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 	
 	<!-- 配置service扫描 -->
-	<context:component-scan base-package="cn.itheima.ssm.service"/>
+	<context:component-scan base-package="cn.ssm.service"/>
 
 </beans>
 ```
@@ -399,9 +399,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	
 	<!-- 事务切面配置 -->
 	<aop:config>
-		<!-- 指定cn.itheima.ssm.service包下的任意类的任意方法，需要事务 -->
+		<!-- 指定cn.ssm.service包下的任意类的任意方法，需要事务 -->
 		<aop:advisor advice-ref="txAdvice" 
-			pointcut="execution(* cn.itheima.ssm.service..*.*(..))"/>
+			pointcut="execution(* cn.ssm.service..*.*(..))"/>
 	</aop:config>
 	
 </beans>
@@ -562,7 +562,7 @@ log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
 
 
 ```
-package cn.itheima.ssm.controller;
+package cn.ssm.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -572,7 +572,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import cn.itheima.ssm.po.Item;
+import cn.ssm.po.Item;
 
 /** 
  * @ClassName: ItemController 
@@ -643,11 +643,11 @@ public class ItemController {
 
 #### 编写商品service接口
 ```java
-package cn.itheima.ssm.service;
+package cn.ssm.service;
 
 import java.util.List;
 
-import cn.itheima.ssm.po.Item;
+import cn.ssm.po.Item;
 
 public interface ItemService {
 	
@@ -661,16 +661,16 @@ public interface ItemService {
 #### 编写商品service实现类
 
 ```java
-package cn.itheima.ssm.service.impl;
+package cn.ssm.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cn.itheima.ssm.mapper.ItemMapper;
-import cn.itheima.ssm.po.Item;
-import cn.itheima.ssm.service.ItemService;
+import cn.ssm.mapper.ItemMapper;
+import cn.ssm.po.Item;
+import cn.ssm.service.ItemService;
 
 
 @Service
@@ -824,19 +824,12 @@ http://127.0.0.1:8080/ssm/queryItemById.do?id=1
 ### 声明商品service接口方法
 
 ```
-package cn.itheima.ssm.service;
+package cn.ssm.service;
 
 import java.util.List;
 
-import cn.itheima.ssm.po.Item;
+import cn.ssm.po.Item;
 
-/** 
- * @ClassName: ItemService 
- * @Description: 商品service接口
- * @author 传智 小杨老师  
- * @date 2018-5-31 下午6:07:43 
- *  
- */
 public interface ItemService {
 	
 	/**
@@ -1067,11 +1060,11 @@ public interface ItemService {
 #### 声明service接口方法
 
 ```
-package cn.itheima.ssm.service;
+package cn.ssm.service;
 
 import java.util.List;
 
-import cn.itheima.ssm.po.Item;
+import cn.ssm.po.Item;
 
 /** 
  * @ClassName: ItemService 
@@ -1182,15 +1175,9 @@ public interface ItemService {
 
 
 ```
-package cn.itheima.ssm.po;
+package cn.ssm.po;
 
-/** 
- * @ClassName: QueryVo 
- * @Description: pojo包装类型
- * @author 传智 小杨老师  
- * @date 2018-5-31 下午7:30:13 
- *  
- */
+
 public class QueryVo {
 	
 	// 包装商品
@@ -1346,7 +1333,7 @@ public class QueryVo {
 说明:spring框架提供了转换的标准,一个接口(Converter)
 
 ```
-package cn.itheima.ssm.converter;
+package cn.ssm.converter;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -1398,7 +1385,7 @@ public class DateConverter implements Converter<String, Date> {
         <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         	<property name="converters">
         		<set>
-        			<bean class="cn.itheima.ssm.converter.DateConverter"/>
+        			<bean class="cn.ssm.converter.DateConverter"/>
         		</set>
         	</property>
         </bean>
