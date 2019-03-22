@@ -37,3 +37,16 @@ tags:
 }
 
 ```
+
+## 淡入淡出
+
+```css
+
+.の-enter-active, .の-leave-active {
+  transition: opacity .5s
+}
+.の-enter, .の-leave-active {
+  opacity: 0
+}
+
+```
